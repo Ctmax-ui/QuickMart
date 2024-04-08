@@ -36,7 +36,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @auth
                                 <li>
-                                    <a class="dropdown-item" href="">Profile</a>
+                                    <a class="dropdown-item" href="{{ route('userprofile')}}">Profile</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="">Items Cart</a>

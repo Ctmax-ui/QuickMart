@@ -16,9 +16,10 @@
   <!-- Main Section -->
   <main>
     
-    @include('utility.hero')
-    @include('utility.short-product')
-    @include('utility.short-about')
+    @include('sections.hero')
+    @include('sections.short-product-c')
+    @include('sections.short-product-e')
+    @include('sections.short-about')
 
 
 
@@ -34,12 +35,8 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-light py-4">
-    <div class="container text-center">
-      <p>&copy; 2024 E-Commerce. All rights reserved.</p>
-    </div>
-  </footer>
+  @include('utility.footer')
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
