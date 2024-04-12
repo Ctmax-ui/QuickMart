@@ -24,15 +24,18 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
+    
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
+        if ($request->user()->isDirty('email')) {   
             $request->user()->email_verified_at = null;
         }
 
         $request->user()->save();
+
+        
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
@@ -57,4 +60,28 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function updateAddressAndPhone(Request $request)
+    {
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'address' => 'required|string|max:255',
+            'phone' => 'required|regex:/^[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{2}$/|min:10|max:12',
+        ]);
+
+        // Get the authenticated user
+        $user = $request->user();
+        // dd($validatedData);
+
+        // Update the user's address and phone number
+        $user->address = $validatedData['address'];
+        $user->phone_number = $validatedData['phone'];
+
+        // Save the changes to the user model
+        $user->save();
+
+        // Redirect back with a success message
+        return Redirect::route('profile.edit')->with('status', 'profile-address-phone-updated');
+    }
 }
+
