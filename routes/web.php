@@ -1,15 +1,27 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('main.sections.main');
-})->name('main.home');
+
+Route::group(['prefix' => '/'], function () {
+
+    Route::get('/', function () {
+        return view('main.sections.main');
+    })->name('main.home');
+
+    Route::get('/products', [ProductController::class, 'index'])->name('main.products');
+
+});
+
+
 
 Route::get('/dashboard', function () {
     return view('user.userprofile');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
 
@@ -24,19 +36,24 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'updateAddressAndPhone'])->name('profile.updateAddrPh');
 });
 
+
+
 Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
         Route::get('/', function () {
             return view('admin.admin');
-        })->name('admin.admin');
+        })->name('admin.admin');    
 
         Route::get('/users',)->name('admin.users');
 
+
         Route::get('/products', function () {
-            return view('admin.products');
-        })->name('admin.products');
+            return view('admin.productsAdd  ');
+        })->name('admin.productsAdd');
+
+        Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     });
 });
 

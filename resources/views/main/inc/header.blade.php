@@ -30,7 +30,7 @@
                             <a class="nav-link fs-5" href="{{ route('main.home') }}">Home</a>
                         </li>
                         <li class="nav-item pe-2">
-                            <a class="nav-link fs-5" href="#">Products</a>
+                            <a class="nav-link fs-5" href="{{route('main.products')}}">Products</a>
                         </li>
                         <li class="nav-item pe-2">
                             <a class="nav-link fs-5" href="#">About</a>
