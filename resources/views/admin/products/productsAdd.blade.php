@@ -1,14 +1,7 @@
 @extends('admin.adminLayout')
+@section('header')
 @section('content')
-    <div id="content">
-        <!-- Top navigation bar -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <ul>
-                    <li><a href="#">QuickMart</a></li>
-                </ul>
-            </div>
-        </nav>
+    
 
         <!-- Main content -->
         <div class="container mt-3">
@@ -93,13 +86,14 @@
                                             </span>
                                         @enderror
                                     </div>
-
                                     <div class="mb-3">
-                                        <label for="category" class="form-label">{{ __('Category') }}</label>
-
-                                        <input id="category" type="text"
-                                            class="form-control @error('category') is-invalid @enderror" name="category"
-                                            value="{{ old('category') }}" autocomplete="category">
+                                            <label for="category">Category:</label>
+                                            <select name="category" id="category" class="form-control">
+                                                @foreach($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                
+                                                @endforeach
+                                            </select>
 
                                         @error('category')
                                             <span class="invalid-feedback" role="alert">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -12,7 +13,6 @@ Route::group(['prefix' => '/'], function () {
     })->name('main.home');
 
     Route::get('/products', [ProductController::class, 'index'])->name('main.products');
-
 });
 
 
@@ -44,16 +44,26 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/', function () {
             return view('admin.admin');
-        })->name('admin.admin');    
+        })->name('admin.admin');
 
-        Route::get('/users',)->name('admin.users');
+        Route::get('/users')->name('admin.users');
 
 
-        Route::get('/products', function () {
-            return view('admin.productsAdd  ');
-        })->name('admin.productsAdd');
+        Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 
-        Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+        Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+
+
+        Route::group(['prefix' => 'products'], function () {
+
+            Route::get('/', function () {
+                return view('admin.products');
+            })->name('main.admin.products');
+
+            Route::get('/add', [ProductController::class, 'showCatagory'])->name('admin.productsAdd');
+
+            Route::post('/store ', [ProductController::class, 'store'])->name('products.store');
+        });
     });
 });
 

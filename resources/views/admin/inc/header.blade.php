@@ -82,7 +82,7 @@
             <a class="nav-link" href="#"><i class="fas fa-users me-2"></i>Users</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.productsAdd')}}"><i class="fas fa-box me-2"></i>Products Add</a>
+            <a class="nav-link" href="{{route('main.admin.products')}}"><i class="fas fa-box me-2"></i>Products Add</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-shopping-cart me-2"></i>Orders</a>
