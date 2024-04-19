@@ -15,8 +15,7 @@ return new class extends Migration
             //
         $table->string('address')->nullable();
         $table->string('phone_number')->nullable();
-        $table->string('is_admin')->nullable();
-        
+        $table->boolean('is_admin')->default(false);        
         });
     }
 

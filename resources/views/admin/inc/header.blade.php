@@ -72,20 +72,20 @@
     <ul class="nav flex-column">
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.admin')}}"><i class="fas fa-tachometer-alt me-2"></i>Home</a>
+            <a class="nav-link" href="{{route('admin.admin')}}"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
         </li>
         {{-- <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
         </li> --}}
 
         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-users me-2"></i>Users</a>
+            <a class="nav-link" href="{{route('admin.usersDetails')}}"><i class="fas fa-users me-2"></i>Users Related</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('main.admin.products')}}"><i class="fas fa-box me-2"></i>Products Add</a>
+            <a class="nav-link" href="{{route('main.admin.products')}}"><i class="fa-solid fa-boxes-stacked"></i> Products Related</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-shopping-cart me-2"></i>Orders</a>
+            <a class="nav-link" href="#"><i class="fas fa-shopping-cart me-2"></i>Orders Related</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-cog me-2"></i>Settings</a>

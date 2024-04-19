@@ -16,7 +16,8 @@
                             <div class="card-header">{{ __('Add New Product') }}</div>
 
                             <div class="card-body">
-                                <form method="POST" action="{{route('products.store')}}" enctype="multipart/form-data">
+
+                                <form method="POST" action="{{route('admin.products.store')}}" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="mb-3">

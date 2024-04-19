@@ -81,7 +81,7 @@ class ProfileController extends Controller
         $user->save();
 
         // Redirect back with a success message
-        return Redirect::route('profile.edit')->with('status', 'profile-address-phone-updated');
+        return Redirect::route('userprofile')->with('status', 'profile-address-phone-updated');
     }
 }
 

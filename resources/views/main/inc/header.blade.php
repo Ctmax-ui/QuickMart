@@ -30,7 +30,7 @@
                             <a class="nav-link fs-5" href="{{ route('main.home') }}">Home</a>
                         </li>
                         <li class="nav-item pe-2">
-                            <a class="nav-link fs-5" href="{{route('main.products')}}">Products</a>
+                            <a class="nav-link fs-5" href="{{ route('main.products') }}">Products</a>
                         </li>
                         <li class="nav-item pe-2">
                             <a class="nav-link fs-5" href="#">About</a>
@@ -43,7 +43,7 @@
                             <a class="nav-link fs-5 dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @auth
-                                    <span class="user-name">{{Auth::user()->name}}</span>
+                                    <span class="user-name">{{ Auth::user()->name }}</span>
                                 @else
                                     <span class="user-name">Guest</span>
                                 @endauth
@@ -51,16 +51,22 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @auth
                                     <li>
-                                        <a class="dropdown-item" href="{{route('dashboard')}}">Profile</a>
+                                        <a class="dropdown-item" href="{{ route('dashboard') }}"><i class="fa-solid fa-user"></i> Profile</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="">Items Cart</a>
+                                        <a class="dropdown-item" href=""><i class="fa-solid fa-cart-shopping"></i> Cart</a>
                                     </li>
+
+                                    @if (auth()->user()->is_admin)
+                                        <li><a class="dropdown-item" href="{{ route('admin.admin') }}"><i class="fa-solid fa-gear"></i> Admin Panel</a>
+                                        </li>
+                                    @endif
                                     <li>
                                         <a class="dropdown-item" href=""
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
                                     </li>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
                                         @csrf
                                     </form>
                                 @else

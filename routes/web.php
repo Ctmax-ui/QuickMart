@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FetchUser;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','isAdmin'])->group(function () {
 
     Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
@@ -46,8 +47,8 @@ Route::middleware('auth')->group(function () {
             return view('admin.admin');
         })->name('admin.admin');
 
-        Route::get('/users')->name('admin.users');
-
+        Route::get('/usersDetails', [FetchUser::class,'index'])->name('admin.usersDetails');
+        Route::post('/update-admin-status', [FetchUser::class, 'updateAdminStatus'])->name('update.admin.status');
 
         Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 
@@ -61,8 +62,9 @@ Route::middleware('auth')->group(function () {
             })->name('main.admin.products');
 
             Route::get('/add', [ProductController::class, 'showCatagory'])->name('admin.productsAdd');
+            Route::get('/show', [ProductController::class, 'showProductLists'])->name('admin.productShow');
 
-            Route::post('/store ', [ProductController::class, 'store'])->name('products.store');
+            Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
         });
     });
 });

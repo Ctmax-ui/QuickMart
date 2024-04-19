@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,5 +21,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        $this->registerMiddleware();
+    }
+
+    protected function registerMiddleware()
+    { 
+        Route::aliasMiddleware('isAdmin', \App\Http\Middleware\CheckIsAdmin::class);
     }
 }

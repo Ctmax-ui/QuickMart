@@ -17,12 +17,11 @@ class ProductController extends Controller
 
     public function showCatagory(){
         $categories = Category::all();
-        return view('admin.productsAdd', ['categories' => $categories]);
+        return view('admin.products.productsAdd', ['categories' => $categories]);
     }
 
     public function store(Request $request)
     {
-
         // Validate the incoming request data
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -55,5 +54,10 @@ class ProductController extends Controller
 
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Product created successfully!');
+    }
+
+    public function showProductLists(){
+        $products = Product::all();
+        return view('admin.products.showProductList', ['products' => $products]);
     }
 }

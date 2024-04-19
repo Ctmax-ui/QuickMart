@@ -8,8 +8,8 @@
 
 
         <ul>
+            <li><a href="{{route('admin.productShow')}}">Show Product</a></li>
             <li><a href="{{route('admin.productsAdd')}}">Add Product</a></li>
             <li><a href="{{route('categories.create')}}">Add Category</a></li>
         </ul>
-    </div>
     @endsection
