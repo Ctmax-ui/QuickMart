@@ -66,26 +66,27 @@ class ProfileController extends Controller
     }
 
     public function addToCart($id){
-        $item= Product::findOrFail($id);
-        $cart=session()->get('cart',[]);
+        // $item= Product::findOrFail($id);
+        // $cart=session()->get('cart',[]);
 
-        if(isset($cart[$id])){
-            $cart[$id]['quantity']++;
-        }else{
-            $cart[$id]=[
-                "name"=>$item->p_name,
-                "quantity"=>1,
-                "price"=>$item->p_price,
-                "image"=>$item->p_image,
-            ];
-        }
-        session()->put('cart',$cart);
-        return redirect()->back()->with('success','Item has been added in your cart');
+        // if(isset($cart[$id])){
+        //     $cart[$id]['quantity']++;
+        // }else{
+        //     $cart[$id]=[
+        //         "name"=>$item->p_name,
+        //         "quantity"=>1,
+        //         "price"=>$item->p_price,
+        //         "image"=>$item->p_image,
+        //     ];
+        // }
+        // session()->put('cart',$cart);
+        // return redirect()->back()->with('success','Item has been added in your cart');
     }
 
     public function itemscart(){
         return view('main.sections.itemsCart');
     }
+    
     public function deleteItemsInCart(Request $request){
         if($request->id){
             $cart=session()->get('cart');

@@ -11,8 +11,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-        return view('main.sections.products', ['products' => $products]);
+        return view('main.sections.products');
     }
 
     public function showCatagory(){

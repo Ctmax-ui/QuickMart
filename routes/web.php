@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/profile', [ProfileController::class, 'updateAddressAndPhone'])->name('profile.updateAddrPh');
 
-    Route::get('/product/{id}',[ProfileController::class,'addToCart'])->name('add.to.cart');
+    Route::post('/product/{id}',[ProfileController::class,'addToCart'])->name('add.to.cart');
     Route::get('/shopping-cart',[ProfileController::class,'itemscart'])->name('items.shopping-cart');
     Route::delete('/delete-cart-products',[ProfileController::class,'deleteItemsInCart'])->name('delete.cart.product');
 });

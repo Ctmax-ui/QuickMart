@@ -56,10 +56,8 @@
             </div>
         </div>
     </footer>
-    <!-- footer section end -->
-    <!-- Bootstrap JS -->
+
     @livewireScripts
-
+    
     </body>
-
     </html>

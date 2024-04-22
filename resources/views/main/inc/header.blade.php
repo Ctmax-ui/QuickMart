@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @livewireStyles
 </head>
 
@@ -54,19 +56,23 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @auth
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('dashboard') }}"><i class="fa-solid fa-user"></i> Profile</a>
+                                        <a class="dropdown-item" href="{{ route('dashboard') }}"><i
+                                                class="fa-solid fa-user"></i> Profile</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href=""><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                                        <a class="dropdown-item" href=""><i class="fa-solid fa-cart-shopping"></i>
+                                            Cart</a>
                                     </li>
 
                                     @if (auth()->user()->is_admin)
-                                        <li><a class="dropdown-item" href="{{ route('admin.admin') }}"><i class="fa-solid fa-gear"></i> Admin Panel</a>
+                                        <li><a class="dropdown-item" href="{{ route('admin.admin') }}"><i
+                                                    class="fa-solid fa-gear"></i> Admin Panel</a>
                                         </li>
                                     @endif
                                     <li>
                                         <a class="dropdown-item" href=""
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                                class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
                                     </li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                         style="display: none;">
@@ -78,12 +84,9 @@
                                 @endauth
                             </ul>
                         </li>
-                        @php
-                            
-                            // session()->forget('cart');
-                        @endphp
+
                         <li class="nav-item pe-2">
-                            <a class="nav-link fs-5" href="{{route('items.shopping-cart')}}"><i class="fa-solid fa-shopping-cart"></i><span class="bg-danger rounded-circle px-1 d-inline-block fw-bolder " style="color: #ffffff; font-size: .8rem;">{{count((array) session('cart'))}}</span></a>
+                            @livewire('Cart-Counter')
                         </li>
                     </ul>
                 </div>

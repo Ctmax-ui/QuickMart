@@ -1,7 +1,7 @@
 @include("main.inc.header")
-{{-- <livewire:counter />  --}}
+@yield('hero_section')
 
-@section("itemAddedAlert")
+{{-- @section("itemAddedAlert")
 <div class="container mt-4">
     @if (session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -10,11 +10,10 @@
       </div>
     @endif
 </div>
-@endsection
+@endsection --}}
 
 @yield('itemAddedAlert')
 @yield('content')
-@yield('hero_section')
 @yield('products_sect')
 @yield('short_product_cl')
 @yield('short_tranding_pr')
