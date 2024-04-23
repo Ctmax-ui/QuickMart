@@ -58,6 +58,6 @@
     </footer>
 
     @livewireScripts
-    
+
     </body>
     </html>

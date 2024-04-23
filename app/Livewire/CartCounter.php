@@ -11,7 +11,9 @@ class CartCounter extends Component
 
     public function render()
     {
+
         $cart_count=count((array) session('cart'));
         return view('livewire.cart-counter', compact('cart_count'));
+
     }
 }

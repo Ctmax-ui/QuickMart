@@ -11,6 +11,7 @@ class ProductController extends Controller
 {
     public function index()
     {
+        
         return view('main.sections.products');
     }
 

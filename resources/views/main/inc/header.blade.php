@@ -14,6 +14,8 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @livewireStyles
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+
 </head>
 
 <body>
