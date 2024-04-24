@@ -13,9 +13,9 @@
                 </a>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fs-5">Price : <span class="text-primary">$200</span></p>
+                    <p class="m-0 fs-5">Price : <span class="text-primary">{{ $product->p_price }}</span></p>
 
-                    <form wire:submit.prevent="addToCart({{$product->id}})" action="{{ route('add.to.cart', $product->id) }}" method="post">
+                    <form wire:click="$dispatch('cartUpdate')" wire:submit.prevent="addToCart({{$product->id}})" action="{{ route('add.to.cart', $product->id) }}" method="post">
                         @csrf
                         <button type="submit" class="btn btn-outline-primary"><i
                                 class="fa-solid fa-cart-plus"></i></button>

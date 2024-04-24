@@ -59,7 +59,7 @@ class SessionPquantity extends Component
     private function updateCart($message = null)
     {
         Session::put('cart', $this->cart);
-        $this->dispatch('cartUpdated');
+        $this->dispatch('cartUpdate');
         $this->calculateTotals();
         $this->message = $message;
     }

@@ -4,16 +4,28 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
+
 class CartCounter extends Component
 {
 
-    protected $listeners= ['cartUpdate'=>'render'];
+    public $cartCount;
+
+    protected $listeners = ['cartUpdate' => 'updateCartCount'];
+
+    public function mount()
+    {
+        $this->updateCartCount();
+    }
+    
+    public function updateCartCount()
+    {
+        $this->cartCount = count((array) session('cart'));
+    }
 
     public function render()
     {
-
-        $cart_count=count((array) session('cart'));
-        return view('livewire.cart-counter', compact('cart_count'));
-
+        return view('livewire.cart-counter');
     }
+
+    
 }

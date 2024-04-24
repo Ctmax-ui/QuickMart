@@ -51,7 +51,7 @@
 
                                             <div class="d-flex justify-content-between align-items-center  h-100">
                                                 <p class="fs-5 m-0">$200</p>
-                                                <button wire:click="deleteProduct('{{ $id }}')"
+                                                <button wire:click="deleteProduct('{{ $id }}'), $dispatch('cartUpdate')" 
                                                     class="btn btn-outline-danger"><i
                                                         class="fa-solid fa-trash"></i></button>
                                             </div>
@@ -63,7 +63,7 @@
                         </div>
                     @endforeach
                 @else
-                    <h3 class="text-center ">You have no product in your cart !!</h3>
+                    <h3 class="text-center" style="height:130px;">You have no product in your cart !!</h3>
                 @endif
             </div>
         </div>

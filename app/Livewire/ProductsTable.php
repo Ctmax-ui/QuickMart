@@ -44,10 +44,8 @@ class ProductsTable extends Component
 
         // Update total items and total price
         $this->updateTotals();
-
         $this->dispatch('cartUpdate');
 
-        return redirect()->back()->with('success', 'Item has been added to your cart');
     }
 
     private function updateTotals()
