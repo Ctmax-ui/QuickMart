@@ -1,27 +1,38 @@
-<div class="row justify-content-start g-2 px-5">
-    @foreach ($products as $product)
+<div class="row product-list m-0" style="gap: 2%;">
 
-        <div class="col-3 p-0 me-2" style="width: 24%;">
-
-            <div class="product-item border p-2 rounded-3">
-                <a class="nav-link w-100" href="#" style="height: 371px !important">
-
-                    <img class="img-fluid" src="{{ asset('storage/images/products_img/' . $product->p_image) }}"
-                        alt="Product 1">
-                    <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">{{ $product->p_name }}</h4>
-
-                </a>
-
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fs-5">Price : <span class="text-primary">{{ $product->p_price }}</span></p>
-
-                    <form wire:click="$dispatch('cartUpdate')" wire:submit.prevent="addToCart({{$product->id}})" action="{{ route('add.to.cart', $product->id) }}" method="post">
-                        @csrf
-                        <button type="submit" class="btn btn-outline-primary"><i
-                                class="fa-solid fa-cart-plus"></i></button>
-                    </form>
-                </div>
+    <div class="position-fixed end-0 bottom-0 me-2 w-25">
+        @if ($message)
+            <div class="alert alert-success bg-opacity-75 alert-dismissible fade show mt-2 fs-6 " role="alert">
+                {{ $message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+        @endif
+    </div>
+
+    @foreach ($products as $product)
+        <div class="product-col-boxs mb-3 mb-lg-3 border py-3 px-2 rounded-2">
+            <section class="panel">
+                <div class="pro-img-box">
+                    <img style="background-image: url('{{ asset('storage/images/products_img/' . $product->p_image) }}')"
+                        src="" alt class="img-fluid" />
+
+                </div>
+                <div class="panel-body text-center">
+                    <h4>
+                        <a href="{{route('product.single.page',$product->id)}}" class="pro-title text-decoration-none text-start w-100 px-2">{{ $product->p_name }}</a>
+                    </h4>
+                    <div class="d-flex justify-content-between align-items-center px-2">
+                        <p class="price m-0">${{ $product->p_price }}</p>
+
+                        <form wire:click="$dispatch('cartUpdate')" wire:submit.prevent="addToCart({{ $product->id }})"
+                            action="{{ route('add.to.cart', $product->id) }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn  btn-outline-primary" href="">Add <i
+                                    class="fa-solid fa-shopping-cart"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </div>
     @endforeach
 </div>

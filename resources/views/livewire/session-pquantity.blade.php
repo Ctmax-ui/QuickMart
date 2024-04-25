@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="position-fixed end-0 bottom-0 ">
+    <div class="position-fixed end-0 bottom-0 me-2 me-md-5">
         @if ($message)
             <div class="alert alert-success bg-opacity-75 alert-dismissible fade show mt-2 fs-6 " role="alert">
                 {{ $message }}
@@ -50,7 +50,7 @@
                                             </div>
 
                                             <div class="d-flex justify-content-between align-items-center  h-100">
-                                                <p class="fs-5 m-0">$200</p>
+                                                <p class="fs-5 m-0">{{ $details['price'] }}</p>
                                                 <button wire:click="deleteProduct('{{ $id }}'), $dispatch('cartUpdate')" 
                                                     class="btn btn-outline-danger"><i
                                                         class="fa-solid fa-trash"></i></button>
@@ -89,7 +89,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="text-lg font-bold">Total</p>
                             <div>
-                                <p class="mb-1 text-lg font-bold">${{ number_format($totalPrice+ 4.99, 2)}}USD</p>
+                                <p class="mb-1 text-lg font-bold">${{ number_format($totalPrice+ 4.99, 2)}} USD</p>
                                 <p class="text-sm ">including VAT</p>
                             </div>
                         </div>

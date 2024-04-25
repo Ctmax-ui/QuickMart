@@ -46,9 +46,11 @@ class SessionPquantity extends Component
 
     public function deleteProduct($id)
     {
+        if(isset($this->cart[$id]['name'])){
         $productName = $this->cart[$id]['name'];
+        }
         unset($this->cart[$id]);
-        $this->updateCart($productName . ' removed from cart');
+        $this->updateCart('Item removed from cart!!');
     
         // Check if cart is empty and update total items accordingly
         if (empty($this->cart)) {

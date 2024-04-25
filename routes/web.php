@@ -14,6 +14,10 @@ Route::group(['prefix' => '/'], function () {
     })->name('main.home');
 
     Route::get('/products', [ProductController::class, 'index'])->name('main.products');
+    Route::get('/product/{id}', [ProductController::class, 'showSingleProductPage'])->name('product.single.page');
+
+    Route::get('/contact', function(){return view('main.sections.contact_us');})->name('main.contact');
+    Route::get('/about', function(){return view('main.sections.about_us');})->name('main.about');
 });
 
 

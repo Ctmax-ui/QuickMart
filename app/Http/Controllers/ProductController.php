@@ -60,4 +60,13 @@ class ProductController extends Controller
         $products = Product::all();
         return view('admin.products.showProductList', ['products' => $products]);
     }
+
+    public function showSingleProductPage($id){
+        $product = Product::find($id);
+        if (!$product) {
+            abort(404);
+        }
+        return view('main.sections.singleProduct', ['product' => $product]);
+    }
+   
 }
