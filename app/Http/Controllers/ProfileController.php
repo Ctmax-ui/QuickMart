@@ -65,24 +65,6 @@ class ProfileController extends Controller
         return Redirect::route('userprofile')->with('status', 'profile-address-phone-updated');
     }
 
-    public function addToCart($id){
-        // $item= Product::findOrFail($id);
-        // $cart=session()->get('cart',[]);
-
-        // if(isset($cart[$id])){
-        //     $cart[$id]['quantity']++;
-        // }else{
-        //     $cart[$id]=[
-        //         "name"=>$item->p_name,
-        //         "quantity"=>1,
-        //         "price"=>$item->p_price,
-        //         "image"=>$item->p_image,
-        //     ];
-        // }
-        // session()->put('cart',$cart);
-        // return redirect()->back()->with('success','Item has been added in your cart');
-    }
-
     public function itemscart(){
         return view('main.sections.itemsCart');
     }

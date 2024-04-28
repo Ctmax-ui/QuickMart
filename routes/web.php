@@ -74,6 +74,8 @@ Route::middleware(['auth','isAdmin'])->group(function () {
             Route::get('/show', [ProductController::class, 'showProductLists'])->name('admin.productShow');
 
             Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
+
+            Route::get('/destroy/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
         });
     });
 });

@@ -4,23 +4,51 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Product;
 
-
-
 class ProductsTable extends Component
 {
     public $products;
-    public array $quantity=[];
+    public array $quantity = [];
     public $totalItems = 0;
     public $totalPrice = 0;
     public $message;
-
+    public $search = '';
+    public $loading = false;
 
     public function mount()
     {
-        $this->products = Product::all();
-        foreach($this->products as $product){
+        $this->loadProducts($this->search);
+
+        $this->quantity = [];
+        foreach ($this->products as $product) {
             $this->quantity[$product->id] = 1;
         }
+    }
+
+    public function loadProducts($search)
+    {
+        $this->loading = true;
+    
+        $this->products = Product::query()
+            ->where(function ($query) use ($search) {
+                $query->whereRaw('LOWER(p_name) LIKE ?', ['%' . strtolower($search) . '%'])
+                      ->orWhereRaw('LOWER(p_brand) LIKE ?', ['%' . strtolower($search) . '%']);
+            })
+            ->get();
+    
+        $this->loading = false;
+    
+        if ($this->products->isEmpty()) {
+            $this->message('No products found.');
+            $this->products = Product::all();
+            // Optionally, clear products array if no results found
+            // $this->products = [];
+        }
+    }
+    
+
+    public function updatedSearch()
+    {
+        $this->loadProducts($this->search);
     }
 
     public function render()
@@ -33,14 +61,14 @@ class ProductsTable extends Component
         $item = Product::findOrFail($id);
         $cart = session()->get('cart', []);
 
-        if(isset($cart[$id])){
+        if (isset($cart[$id])) {
             $cart[$id]['quantity']++;
-        }else{
+        } else {
             $cart[$id] = [
-                "id"=>$item->id,
+                "id" => $item->id,
                 "name" => $item->p_name,
                 "quantity" => 1,
-                "size"=> "none",
+                "size" => "none",
                 "price" => $item->p_price,
                 "image" => $item->p_image,
             ];
@@ -52,7 +80,6 @@ class ProductsTable extends Component
         $this->updateTotals();
         $this->message('Item added in your cart');
         $this->dispatch('cartUpdate');
-
     }
 
     private function updateTotals()
@@ -66,7 +93,8 @@ class ProductsTable extends Component
             $this->totalPrice += $item['quantity'] * $item['price'];
         }
     }
-    public function message($message=null){   
+    public function message($message = null)
+    {
         $this->message = $message;
     }
 }

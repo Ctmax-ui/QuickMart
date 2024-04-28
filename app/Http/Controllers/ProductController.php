@@ -15,11 +15,16 @@ class ProductController extends Controller
         return view('main.sections.products');
     }
 
-    public function showCatagory(){
-        $categories = Category::all();
-        return view('admin.products.productsAdd', ['categories' => $categories]);
+    public function showSingleProductPage($id){
+        $product = Product::find($id);
+        if (!$product) {
+            abort(404);
+        }
+        return view('main.sections.singleProduct', ['product' => $product]);
     }
 
+
+    // function for admin product page
     public function store(Request $request)
     {
         // Validate the incoming request data
@@ -55,18 +60,22 @@ class ProductController extends Controller
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Product created successfully!');
     }
-
     public function showProductLists(){
         $products = Product::all();
         return view('admin.products.showProductList', ['products' => $products]);
     }
-
-    public function showSingleProductPage($id){
-        $product = Product::find($id);
-        if (!$product) {
-            abort(404);
-        }
-        return view('main.sections.singleProduct', ['product' => $product]);
+    public function showCatagory(){
+        $categories = Category::all();
+        return view('admin.products.productsAdd', ['categories' => $categories]);
     }
-   
+
+    public function destroy($id)
+    {
+        
+        $product = Product::findOrFail($id);
+        
+        $product->delete();
+        
+        return redirect()->back()->with('success', 'Product deleted successfully');
+    }
 }
