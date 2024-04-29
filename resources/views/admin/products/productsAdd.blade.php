@@ -1,13 +1,9 @@
 @extends('admin.adminLayout')
 @section('header')
 @section('content')
-    
 
-        <!-- Main content -->
         <div class="container mt-3">
             <div class="w-100 text-center fs-4">Products</div>
-
-            <!-- resources/views/products/create.blade.php -->
 
             <div class="container">
                 <div class="row justify-content-center">
@@ -131,5 +127,4 @@
 
 
         </div>
-    </div>
 @endsection

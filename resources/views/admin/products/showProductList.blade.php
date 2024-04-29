@@ -31,7 +31,7 @@
                     <th>{{$product->p_quantity}}</th>
                     <th>{{$product->created_at}}</th>
                     <th>{{$product->updated_at}}</th>
-                    <th><button>Edit</button></th>
+                    <th><a href="{{route('admin.products.edit',$product->id)}}">Edit</a></th>
                     <th><a href="{{route('admin.products.destroy',$product->id)}}">Delete</a></th>
                 </tr>
             @endforeach

@@ -5,12 +5,14 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FetchUser;
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
 
 
 Route::group(['prefix' => '/'], function () {
 
     Route::get('/', function () {
-        return view('main.sections.main');
+        $products = Product::all();
+        return view('main.sections.main', ['products' => $products]);
     })->name('main.home');
 
     Route::get('/products', [ProductController::class, 'index'])->name('main.products');
@@ -74,6 +76,10 @@ Route::middleware(['auth','isAdmin'])->group(function () {
             Route::get('/show', [ProductController::class, 'showProductLists'])->name('admin.productShow');
 
             Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
+
+            Route::get('/edit/{id}', [ProductController::class, 'editPage'])->name('admin.products.edit');
+
+            Route::put('/edit/{id}', [ProductController::class, 'update'])->name('admin.products.update');
 
             Route::get('/destroy/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
         });

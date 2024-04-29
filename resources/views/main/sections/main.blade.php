@@ -15,195 +15,58 @@
 @endsection
 
 @section('short_product_cl')
-    <section class="container my-5 px-5">
-        <div class="d-flex justify-content-between mb-4">
-            <h4 class=" mb-4 ms-4 fs-3">See our latest Men's wear</h4>
-            <a href="" class="fs-4 px-3 btn btn-outline-primary rounded-pill">See more <i
-                    class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="row justify-content-start g-2 px-5">
-            <div class="col-3 p-0 me-2" style="width: 24%;">
-                <div class="product-item border p-2 rounded-3">
-                    <a class="nav-link w-100" href="#">
-                        <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-1.webp') }}" alt="Product 1">
-                        <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                            White
-                            T-shirt.</h4>
-                    </a>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="m-0 fs-5">Price : <span class="text-primary">$200</span></p>
-                        <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 p-0 me-2" style="width: 24%;">
-                <div class="product-item border p-2 rounded-3">
-                    <a class="nav-link w-100" href="#">
-                        <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-2.webp') }}" alt="Product 1">
-                        <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                            Black
-                            T-shirt.</h4>
-                    </a>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="m-0 fs-5">Price : <span class="text-primary">$190</span></p>
-                        <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 p-0 me-2" style="width: 24%;">
-                <div class="product-item border p-2 rounded-3">
-                    <a class="nav-link w-100" href="#">
-                        <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-1.webp') }}" alt="Product 1">
-                        <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                            White
-                            T-shirt.</h4>
-                    </a>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="m-0 fs-5">Price : <span class="text-primary">$200</span></p>
-                        <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 p-0 me-2" style="width: 24%;">
-                <div class="product-item border p-2 rounded-3">
-                    <a class="nav-link w-100" href="#">
-                        <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-2.webp') }}" alt="Product 1">
-                        <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                            Black
-                            T-shirt.</h4>
-                    </a>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="m-0 fs-5">Price : <span class="text-primary">$190</span></p>
-                        <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 p-0 me-2" style="width: 24%;">
-                <div class="product-item border p-2 rounded-3">
-                    <a class="nav-link w-100" href="#">
-                        <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-1.webp') }}" alt="Product 1">
-                        <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                            White
-                            T-shirt.</h4>
-                    </a>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="m-0 fs-5">Price : <span class="text-primary">$200</span></p>
-                        <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 p-0 me-2" style="width: 24%;">
-                <div class="product-item border p-2 rounded-3">
-                    <a class="nav-link w-100" href="#">
-                        <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-2.webp') }}" alt="Product 1">
-                        <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                            Black
-                            T-shirt.</h4>
-                    </a>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="m-0 fs-5">Price : <span class="text-primary">$190</span></p>
-                        <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="container my-3 px-0">
+
+
 
     </section>
 @endsection
 
 @section('short_tranding_pr')
-<section class="container my-5 px-5">
-    <div class="d-flex justify-content-between mb-4">
-        <h4 class=" mb-4 ms-4 fs-3">See our trending product</h4>
-        <a href="" class="fs-4 px-3 btn btn-outline-primary rounded-pill">See more <i
-                class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="row justify-content-start g-2 px-5">
-        <div class="col-3 p-0 me-2" style="width: 24%;">
-            <div class="product-item border p-2 rounded-3">
-                <a class="nav-link w-100" href="#"  style="height: 371px !important">
-                    <img class="img-fluid" src="{{ asset('images/res/tranding/Tokyo Talkies Micro Ditsy Printed Oversized Casual Shirt.webp') }}" alt="Product 1">
-                    <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Blive Men Solid Casual Black Shirt</h4>
-                </a>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fs-5">Price : <span class="text-primary">$200</span></p>
-                    <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 p-0 me-2" style="width: 24%;">
-            <div class="product-item border p-2 rounded-3">
-                <a class="nav-link w-100" href="#">
-                    <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-2.webp') }}" alt="Product 1">
-                    <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                        Black
-                        T-shirt.</h4>
-                </a>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fs-5">Price : <span class="text-primary">$190</span></p>
-                    <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 p-0 me-2" style="width: 24%;">
-            <div class="product-item border p-2 rounded-3">
-                <a class="nav-link w-100" href="#">
-                    <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-1.webp') }}" alt="Product 1">
-                    <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                        White
-                        T-shirt.</h4>
-                </a>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fs-5">Price : <span class="text-primary">$200</span></p>
-                    <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 p-0 me-2" style="width: 24%;">
-            <div class="product-item border p-2 rounded-3">
-                <a class="nav-link w-100" href="#">
-                    <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-2.webp') }}" alt="Product 1">
-                    <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                        Black
-                        T-shirt.</h4>
-                </a>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fs-5">Price : <span class="text-primary">$190</span></p>
-                    <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 p-0 me-2" style="width: 24%;">
-            <div class="product-item border p-2 rounded-3">
-                <a class="nav-link w-100" href="#">
-                    <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-1.webp') }}" alt="Product 1">
-                    <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                        White
-                        T-shirt.</h4>
-                </a>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fs-5">Price : <span class="text-primary">$200</span></p>
-                    <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 p-0 me-2" style="width: 24%;">
-            <div class="product-item border p-2 rounded-3">
-                <a class="nav-link w-100" href="#">
-                    <img class="img-fluid" src="{{ asset('images/res/ecom/men-t-2.webp') }}" alt="Product 1">
-                    <h4 class="fs-6 pt-3 text-right text-wrap m-0" style="height: 90px">Veirdo Printed Men Round Neck
-                        Black
-                        T-shirt.</h4>
-                </a>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fs-5">Price : <span class="text-primary">$190</span></p>
-                    <a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <section class="container my-5 px-5">
 
-</section>
+        <div class="mx-5 mb-4">
+            <div class="px-5 w-100 text-center d-flex justify-content-between align-items-center ">
+                <h4 class="fs-3 m-0">See our Latest Product</h4>
+                <a class="btn btn-outline-primary rounded-2 fs-5" href="{{ route('main.products') }}">Browse now <i
+                        class="fa-solid fa-arrow-right"></i></a>
+
+            </div>
+            <div class="black-line mt-3 p-0"></div>
+        </div>
+
+
+        <div class="row product-list mx-5 px-5" style="gap: 2%;">
+
+            @foreach ($products as $product)
+                <div class="product-col-boxs mb-3 mb-lg-3 border py-3 px-2 rounded-2">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img style="background-image: url('{{ asset('storage/images/products_img/' . $product->p_image) }}')"
+                                src="" alt class="img-fluid" />
+
+                        </div>
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="{{ route('product.single.page', $product->id) }}"
+                                    class="pro-title text-decoration-none text-start w-100 px-2">{{ $product->p_name }}</a>
+                            </h4>
+                            <div class="d-flex justify-content-between align-items-center px-2">
+                                <p class="price m-0">${{ $product->p_price }}</p>
+
+                                <form wire:click="$dispatch('cartUpdate')"
+                                    wire:submit.prevent="addToCart({{ $product->id }})" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn  btn-outline-primary">Add <i
+                                            class="fa-solid fa-shopping-cart"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            @endforeach
+        </div>
+    </section>
 @endsection
 
 @section('short_about')
@@ -226,4 +89,56 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('script')
+    <script>
+        let items = document.querySelectorAll('.carousel .carousel-item')
+
+        items.forEach((el) => {
+            const minPerSlide = 3
+            let next = el.nextElementSibling
+            for (var i = 1; i < minPerSlide; i++) {
+                if (!next) {
+                    // wrap carousel by using first child
+                    next = items[0]
+                }
+                let cloneChild = next.cloneNode(true)
+                el.appendChild(cloneChild.children[0])
+                next = next.nextElementSibling
+            }
+        })
+
+        /* Nothing below this point is needed. */
+        const darkSwitch = document.getElementById("darkSwitch");
+        window.addEventListener("load", function() {
+            if (darkSwitch) {
+                initTheme();
+                darkSwitch.addEventListener("change", function() {
+                    resetTheme();
+                });
+            }
+        });
+
+        function initTheme() {
+            let darkThemeSelected =
+                localStorage.getItem("darkSwitch") !== null &&
+                localStorage.getItem("darkSwitch") === "dark";
+            darkSwitch.checked = darkThemeSelected;
+            darkThemeSelected
+                ?
+                document.documentElement.setAttribute('data-bs-theme', 'dark') :
+                document.documentElement.removeAttribute("data-bs-theme");
+        }
+
+        function resetTheme() {
+            if (darkSwitch.checked) {
+                document.documentElement.setAttribute("data-bs-theme", "dark");
+                localStorage.setItem("darkSwitch", "dark");
+            } else {
+                document.documentElement.removeAttribute("data-bs-theme");
+                localStorage.removeItem("darkSwitch");
+            }
+        }
+    </script>
 @endsection

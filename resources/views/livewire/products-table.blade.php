@@ -115,7 +115,7 @@
 
             <div class="row product-list m-0" style="gap: 2%;">
 
-                <div class="position-fixed end-0 bottom-0 me-2 w-25">
+                <div class="position-fixed end-0 bottom-0 me-2 w-25" style="z-index: 99999999">
                     @if ($message)
                         <div class="alert alert-success bg-opacity-75 alert-dismissible fade show mt-2 fs-6 "
                             role="alert">
