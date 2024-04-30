@@ -18,7 +18,9 @@
 </head>
 
 <body>
-    <header>
+    <a href="#header" class="position-fixed end-0 bottom-0 mb-5 me-4 text-dark btn btn-outline-warning"><i class="fa fa-angle-double-up"></i></a>
+
+    <header id="header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('main.home') }}">

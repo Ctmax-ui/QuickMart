@@ -18,38 +18,36 @@
                 <div class="col-lg-3 col-md-4 col-10 info-box">
                     <h4>Information</h4>
                     <ul class="pt-3">
-                        <li><a href="#"><span class="fa fa-angle-right"></span> About Us</a> </li>
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Contact Us</a></li>
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Shortcodes</a></li>
-                        <li><a href="#"><span class="fa fa-angle-right"></span> FAQ's</a></li>
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Special Products</a></li>
+                        <li><a href="{{route('main.home')}}"><span class="fa fa-angle-right"></span> Home</a> </li>
+                        <li><a href="{{route('main.products')}}"><span class="fa fa-angle-right"></span> Products</a> </li>
+                        <li><a href="{{route('main.about')}}"><span class="fa fa-angle-right"></span> About Us</a> </li>
+                        <li><a href="{{route('main.contact')}}"><span class="fa fa-angle-right"></span> Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-10 category-box">
                     <h4>Category</h4>
                     <ul class="pt-3">
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Fruits & Vegetables</a></li>
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Meats & Seafood</a></li>
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Bakery & Pastry</a></li>
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Beverages</a></li>
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Breakfast & Dairy</a></li>
+                        <li><a href="{{route('main.products')}}"><span class="fa fa-angle-right"></span> Men's</a></li>
+                        <li><a href="{{route('main.products')}}"><span class="fa fa-angle-right"></span> Women's</a></li>
+                        <li><a href="{{route('main.products')}}"><span class="fa fa-angle-right"></span> Children's</a></li>
+                        <li><a href="{{route('main.products')}}"><span class="fa fa-angle-right"></span> Bag's</a></li>
+                        <li><a href="{{route('main.products')}}"><span class="fa fa-angle-right"></span> Accerssorie's</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-2 col-md-4 col-10 profile-box p-0">
+                <div class="col-lg-2 col-md-4 col-10 profile-box p-0 mb-3">
                     <h4>Profile</h4>
-                    <ul class="pt-3">
-                        <li><a href="#"><span class="fa fa-angle-right"></span> Home</a></li>
+                    <ul class="">
                         <li><a href="#"><span class="fa fa-angle-right"></span> Today's Deals</a></li>
                     </ul>
-                    <div class="follow-us-box">
+                    <div class="follow-us-box h-100 ">
                         <h5>Follow Us</h5>
-                        <ul>
-                            <li><a href="#"><span class="fa-brands fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa-brands fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa-brands fa-google-plus-g"></span></a></li>
-                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                        <ul class="">
+                            <li class="m-0 p-0 mx-1"><a class="border px-3 py-2 rounded-2" href="#"><span class="fa-brands fa-facebook"></span></a></li>
+                            <li class="m-0 p-0 mx-1"><a class="border px-2 py-2 rounded-2" href="#"><span class="fa-brands fa-twitter"></span></a></li>
+                            <li class="m-0 p-0 mx-1"><a class="border px-2 py-2 rounded-2" href="#"><span class="fa-brands fa-google-plus-g"></span></a></li>
+                            <li class="m-0 p-0 mx-1"><a class="border px-3 py-2 rounded-2" href="#"><span class="fab fa-pinterest-p"></span></a></li>
                         </ul>
                     </div>
                 </div>
