@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
@@ -21,6 +22,20 @@ class ProductController extends Controller
             abort(404);
         }
         return view('main.sections.singleProduct', ['product' => $product]);
+    }
+
+    public function checkoutPage(){
+        $cart = Session::get('cart', []);
+
+        $subtotal = 0;
+
+        foreach ($cart as $item) {
+            $subtotal += $item['price'] * $item['quantity'];
+        }
+
+
+        $products = Product::all();
+        return view('main.sections.checkoutPage',['products' => $products],['subtotal' => $subtotal]);
     }
 
 

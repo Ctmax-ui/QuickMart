@@ -1,6 +1,9 @@
 .w-fit {
     width: fit-content;
 }
+.bg-yllo{
+    background-color: #D19C97 !important;
+}
 .text-yllo{
     color: #D19C97 !important;
 }
@@ -342,6 +345,11 @@
 
 
 /* product section end */
+
+/* checkout page style start */
+
+
+/* checkout page style end */
 
 .subscribe-form{
     background-color: #EDF1FF !important;

@@ -24,9 +24,8 @@
                                 <div class="col-10 p-0">
                                     <div class="row  d-flex justify-content-between h-100">
                                         <div class="col-7 px-2 ps-3">
-                                            <span
-                                                class="d-block fw-bold w-100 text-wrap fs-6">{{ $details['name'] }}</span>
-                                            <span class="mt-4 fs-6 "></span>
+                                            <a href="{{ route('product.single.page', $details['id']) }}"
+                                                class="d-block fw-bold w-100 text-wrap fs-6 text-decoration-none">{{ $details['name'] }}</a>
                                         </div>
 
                                         <div class="col-5 d-grid justify-content-center">
@@ -93,7 +92,7 @@
                                 <p class="text-sm ">including VAT</p>
                             </div>
                         </div>
-                        <a class="mt-4 w-full btn btn-primary rounded-md">Proceed to Checkout</a>
+                        <a href="{{route('product.checkout.page')}}" class="mt-4 w-full btn btn-primary rounded-md">Proceed to Checkout</a>
                     </div>
                 @endif
             </div>

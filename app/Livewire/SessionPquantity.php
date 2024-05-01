@@ -24,7 +24,7 @@ class SessionPquantity extends Component
         if ((int)$value >= 1) {
             $this->cart[$id]['quantity'] = (int)$value;
             $this->updateCart('Quantity of ' . $this->cart[$id]['name'] . ' added +' . (int)$value . ' in your cart');
-        } else{
+        } else {
             $this->cart[$id]['quantity'] = 1;
             $this->updateCart('Quantity of ' . $this->cart[$id]['name'] . ' added +' . $this->cart[$id]['quantity'] . ' in your cart');
         }
@@ -46,12 +46,12 @@ class SessionPquantity extends Component
 
     public function deleteProduct($id)
     {
-        if(isset($this->cart[$id]['name'])){
-        $productName = $this->cart[$id]['name'];
+        if (isset($this->cart[$id]['name'])) {
+            $productName = $this->cart[$id]['name'];
         }
         unset($this->cart[$id]);
         $this->updateCart('Item removed from cart!!');
-    
+
         // Check if cart is empty and update total items accordingly
         if (empty($this->cart)) {
             $this->totalItems = 0;
@@ -75,6 +75,8 @@ class SessionPquantity extends Component
             $this->totalPrice += $item['quantity'] * $item['price'];
             $this->totalItems += $item['quantity'];
         }
+
+
     }
 
     public function render()

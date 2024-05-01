@@ -48,9 +48,19 @@
         </div>
 
 
-        <div class="col-md-5">
-            <h3 class="text-dark">{{ $product->p_name }}.</h3>
-            <p class="fs-1 text-primary">${{ $product->p_price }}</p>
+        <div class="col-md-6">
+            <h3 class="text-dark fw-bold ">{{ $product->p_name }}.</h3>
+            <div class="d-flex mb-3">
+                <div class="text-primary mr-2">
+                    <small class="fas fa-star text-yllo"></small>
+                    <small class="fas fa-star text-yllo"></small>
+                    <small class="fas fa-star text-yllo"></small>
+                    <small class="fas fa-star-half-alt text-yllo"></small>
+                    <small class="far fa-star text-yllo"></small>
+                </div>
+                <small class="pt-1">(50 Reviews)</small>
+            </div>
+            <p class="fs-2 fw-bold text-dark text-primary">${{ $product->p_price }}</p>
 
             <p class="fs-6 text-secondary">{{ $product->p_description }}</p>
 
@@ -60,12 +70,12 @@
 
                 @if (session('cart') && isset(session('cart')[$product->id]))
                     <button wire:click="deleteProduct('{{ $product->id }}'), $dispatch('cartUpdate')"
-                        class="btn btn-outline-danger">Remove <i class="fa-solid fa-trash"></i></button>
+                        class="btn btn-outline-danger">Remove from Cart <i class="fa-solid fa-trash"></i></button>
                 @else
                     <form wire:click="$dispatch('cartUpdate');" wire:submit.prevent="addToCart({{ $product->id }})"
                         action="" method="post">
                         @csrf
-                        <button type="submit" class="btn  btn-outline-primary" href="">Add <i
+                        <button type="submit" class="btn btn-outline-primary " href="">Add to Cart <i
                                 class="fa-solid fa-shopping-cart"></i></button>
                     </form>
                 @endif

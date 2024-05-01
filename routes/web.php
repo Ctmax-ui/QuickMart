@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\FetchUser;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
@@ -17,7 +18,11 @@ Route::group(['prefix' => '/'], function () {
 
     Route::get('/products', [ProductController::class, 'index'])->name('main.products');
     Route::get('/product/{id}', [ProductController::class, 'showSingleProductPage'])->name('product.single.page');
-    
+
+    Route::get('/checkout', [ProductController::class, 'checkoutPage'])->name('product.checkout.page');
+
+    Route::post('/checkout', [OrderController::class, 'store'])->name('product.checkout.store');
+        
 
     Route::get('/contact', function(){return view('main.sections.contact_us');})->name('main.contact');
     Route::get('/about', function(){return view('main.sections.about_us');})->name('main.about');
