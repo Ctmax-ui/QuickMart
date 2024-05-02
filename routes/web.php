@@ -88,6 +88,27 @@ Route::middleware(['auth','isAdmin'])->group(function () {
 
             Route::get('/destroy/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
         });
+
+        Route::group(['prefix' => 'orders'], function () {
+
+            Route::get('/', function () {
+                return view('admin.order.order');
+            })->name('main.admin.userOrder');
+
+            Route::get('/Show', [OrderController::class, 'navigaetToOrderShow'])->name('main.admin.userOrderShow');
+
+            // Route::get('/add', [ProductController::class, 'showCatagory'])->name('admin.productsAdd');
+            // Route::get('/show', [ProductController::class, 'showProductLists'])->name('admin.productShow');
+
+            // Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
+
+            // Route::get('/edit/{id}', [ProductController::class, 'editPage'])->name('admin.products.edit');
+
+            // Route::put('/edit/{id}', [ProductController::class, 'update'])->name('admin.products.update');
+
+            // Route::get('/destroy/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+        });
+        
     });
 });
 

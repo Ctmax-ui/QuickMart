@@ -56,13 +56,22 @@ class ProfileController extends Controller
     {
         $validatedData = $request->validate([
             'address' => 'required|string|max:255',
-            'phone' => 'required|regex:/^[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{2}$/|min:10|max:12',
+            'phone' => 'required|string|max:15',
+            'country'=> 'required|string|max:255',
+            'city'=> 'required|string|max:255',
+            'state'=> 'required|string|max:255',
+            'postal'=> 'required|integer',
         ]);
         $user = $request->user();
         $user->address = $validatedData['address'];
         $user->phone_number = $validatedData['phone'];
+        $user->country = $validatedData['country'];
+        $user->city = $validatedData['city'];
+        $user->state = $validatedData['state'];
+        $user->postal = $validatedData['postal'];
         $user->save();
-        return Redirect::route('userprofile')->with('status', 'profile-address-phone-updated');
+        // return Redirect::route('userprofile')->with('status', 'profile-address-phone-updated');
+        return redirect()->back();
     }
 
     public function itemscart(){

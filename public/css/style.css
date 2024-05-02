@@ -1,5 +1,5 @@
 .w-fit {
-    width: fit-content;
+    width: fit-content !important;
 }
 .bg-yllo{
     background-color: #D19C97 !important;

@@ -24,18 +24,18 @@ class ProductController extends Controller
         return view('main.sections.singleProduct', ['product' => $product]);
     }
 
-    public function checkoutPage(){
-        $cart = Session::get('cart', []);
+    public function checkoutPage()
+    {
 
         $subtotal = 0;
-
-        foreach ($cart as $item) {
-            $subtotal += $item['price'] * $item['quantity'];
+        if (session()->has('cart') && !empty(session()->get('cart'))) {
+            $cart = Session::get('cart', []);
+            foreach ($cart as $item) {
+                $subtotal += $item['price'] * $item['quantity'];
+            }
         }
-
-
         $products = Product::all();
-        return view('main.sections.checkoutPage',['products' => $products],['subtotal' => $subtotal]);
+        return view('main.sections.checkoutPage', ['products' => $products], ['subtotal' => $subtotal]);
     }
 
 
@@ -93,25 +93,26 @@ class ProductController extends Controller
         return redirect()->back()->with('success', 'Product deleted successfully');
     }
 
-    public function editPage(Request $request,$id){
+    public function editPage(Request $request, $id)
+    {
         $product = Product::findOrFail($id);
-    
-    return view('admin.products.productEdit', compact('product'));
+
+        return view('admin.products.productEdit', compact('product'));
     }
 
     public function update(Request $request, $id)
     {
-    $validatedData = $request->validate([
-        'p_name' => 'string|max:255',
-        'p_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        'p_description' => 'string',
-        'p_brand' => 'nullable|string|max:255',
-        'p_price' => 'numeric|min:0',
-        'p_quantity' => 'nullable|integer|min:0',
-    ]);
+        $validatedData = $request->validate([
+            'p_name' => 'string|max:255',
+            'p_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'p_description' => 'string',
+            'p_brand' => 'nullable|string|max:255',
+            'p_price' => 'numeric|min:0',
+            'p_quantity' => 'nullable|integer|min:0',
+        ]);
 
-    $product = Product::findOrFail($id);
-    $product->update($validatedData);
-    return redirect()->route('admin.productShow')->with('success', 'Product updated successfully');
+        $product = Product::findOrFail($id);
+        $product->update($validatedData);
+        return redirect()->route('admin.productShow')->with('success', 'Product updated successfully');
     }
 }

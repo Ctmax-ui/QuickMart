@@ -15,6 +15,10 @@ return new class extends Migration
             //
         $table->string('address')->nullable();
         $table->string('phone_number')->nullable();
+        $table->string('country')->nullable();
+        $table->string('city')->nullable();
+        $table->string('state')->nullable();
+        $table->integer('postal')->nullable();
         $table->boolean('is_admin')->default(false);        
         });
     }
@@ -24,8 +28,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('users');
     }
+    // public function down(): void
+    // {
+    //     Schema::table('users', function (Blueprint $table) {
+    //         //
+    //     });
+    // }
 };

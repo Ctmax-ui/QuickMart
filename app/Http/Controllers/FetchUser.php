@@ -9,9 +9,10 @@ class FetchUser extends Controller
 {
     //
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        $search = $request->input('search_user');
+        $users = User::where('name', 'like', "%$search%")->orWhere('email', 'like', "%$search%")->orWhere('is_admin', $search === 'true')->orWhere('address', 'like', "%$search%")->orWhere('phone_number', 'like', "%$search%")->get();
         return view('admin.userDetails', ['users' => $users]);
     }
 
@@ -28,5 +29,4 @@ class FetchUser extends Controller
         $user->save();
         return response()->json(['message' => 'Admin status updated successfully']);
     }
-
 }

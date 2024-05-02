@@ -1,14 +1,14 @@
-<section>
+<section id="credentials">
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Your Shipping Address') }}
+            {{ __('Your Credentials') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
             {{ __("Update your account's address to change the shipping destination.") }}
         </p>
-        <p class="mt-1 text-sm text-gray-600"><span style="color: red;">*</span>
-            {{ __("If your shipping address or phone number is incorrect, your order will be suspended. Please ensure that your address and phone number are accurate to avoid any delays in processing your order.") }}
+        <p class="mt-1 text-sm text-gray-600"><span style="color: red;">*NOTE:</span>
+            {{ __("If your shipping address or phone number is incorrect, your order will be suspended. Please ensure that your address , phone number and other details are accurate to avoid any delays in processing your order.") }}
         </p>
     </header>
 
@@ -32,9 +32,45 @@
             <x-input-label for="phone" :value="__('Phone')" />
 
             <x-text-input id="phone" name="phone" type="tel" class="mt-1 block w-full" :value="old('phone', $user->phone_number)"
-                required autofocus autocomplete="phone" pattern="[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{2}" />
+                required autofocus autocomplete="phone"/>
 
             <x-input-error class="mt-2" :messages="$errors->get('phone')" />
+        </div>
+
+        <div>
+            <x-input-label for="country " :value="__('Country ')" />
+
+            <x-text-input id="country " name="country" type="text" class="mt-1 block w-full" :value="old('country', $user->country)"
+                required autofocus autocomplete="country"/>
+
+            <x-input-error class="mt-2" :messages="$errors->get('country')" />
+        </div>
+
+        <div>
+            <x-input-label for="state " :value="__('State ')" />
+
+            <x-text-input id="state " name="state" type="text" class="mt-1 block w-full" :value="old('state', $user->state)"
+                required autofocus autocomplete="state"/>
+
+            <x-input-error class="mt-2" :messages="$errors->get('state')" />
+        </div>
+
+        <div>
+            <x-input-label for="city" :value="__('City')" />
+
+            <x-text-input id="city " name="city" type="text" class="mt-1 block w-full" :value="old('city', $user->city)"
+                required autofocus autocomplete="city"/>
+
+            <x-input-error class="mt-2" :messages="$errors->get('city')" />
+        </div>
+
+        <div>
+            <x-input-label for="postal " :value="__('ZIP Code  ')" />
+
+            <x-text-input id="postal " name="postal" type="number" class="mt-1 block w-full" :value="old('postal', $user->postal)"
+                required autofocus autocomplete="postal"/>
+
+            <x-input-error class="mt-2" :messages="$errors->get('postal')" />
         </div>
 
 

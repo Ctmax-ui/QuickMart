@@ -12,6 +12,9 @@
     <!-- Custom CSS -->
     <style>
         /* Sidebar */
+        .w-fit{
+            width: fit-content !important;
+        }
         #sidebar {
             height: 100%;
             width: 250px;
@@ -85,7 +88,7 @@
             <a class="nav-link" href="{{route('main.admin.products')}}"><i class="fa-solid fa-boxes-stacked"></i> Products Related</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-shopping-cart me-2"></i>Orders Related</a>
+            <a class="nav-link" href="{{route('main.admin.userOrder')}}"><i class="fas fa-shopping-cart me-2"></i>Orders Related</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-cog me-2"></i>Settings</a>
