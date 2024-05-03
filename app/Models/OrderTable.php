@@ -28,5 +28,6 @@ class OrderTable extends Model
         'ordered_items_arr',
         'items_quantity_arr',
         'total_price_arr',
+        'subtotal'
     ];
 }

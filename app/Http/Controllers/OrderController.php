@@ -7,6 +7,7 @@ use App\Models\OrderTable;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use PDF;
 
 class OrderController extends Controller
 {
@@ -21,10 +22,12 @@ class OrderController extends Controller
         $productIds = [];
         $productQuantitys = [];
         $productPrices = [];
+        $subtotal = 0;
         foreach (session()->get('cart') as $item) {
             $productIds[] = $item['id'];
             $productQuantitys[] = $item['quantity'];
             $productPrices[] = $item['price'];
+            $subtotal += $item['price'] * $item['quantity'];
         }
 
         // Serialize the array
@@ -70,6 +73,7 @@ class OrderController extends Controller
             'ordered_items_arr' => $orderedItemsSerializeArrIds,
             'items_quantity_arr' => $orderedItemsSerializeArrQuantitys,
             'total_price_arr' => $orderedItemsSerializeArrPrices,
+            'subtotal' =>$subtotal+4.99,
 
         ]);
         $order->save();
@@ -79,6 +83,7 @@ class OrderController extends Controller
 
 
     // for admin order panle.
+
     public function navigaetToOrderShow()
     {
         $orderItems = OrderTable::paginate(10);
@@ -91,4 +96,32 @@ class OrderController extends Controller
 
         return view('admin.order.ordersShow', ['orderItems' => $orderItems]);
     }
+
+    public function OrderUpdateShowPage($orderId){  
+        $orderSingle = OrderTable::find($orderId);
+        if (!$orderSingle) {
+            abort(404);
+        }
+        return view('admin.order.orderUpdate', ['orderSingle' => $orderSingle]);
+    }
+
+    public function UpdateOrderStatus($orderId, Request $request){
+        $orderSingle = OrderTable::find($orderId);
+        if (!$orderSingle) {
+            abort(404);
+        }
+        $newStatus = $request->input('order_status');
+        $orderSingle->order_status = $newStatus;
+        $orderSingle->save();
+        return redirect()->back()->with('success', 'Order status updated successfully');
+    }
+    
+    public function printInvoice($orderId){
+        $orderSingle = OrderTable::find($orderId);
+        if (!$orderSingle) {
+            abort(404);
+        }
+        return view('admin.order.invoice', ['orderSingle' => $orderSingle]);
+    }
+    
 }

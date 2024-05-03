@@ -33,6 +33,8 @@ return new class extends Migration
             $table->string('items_quantity_arr');
             $table->string('total_price_arr');
 
+            $table->string('subtotal');
+
             $table->timestamps();
         });
     }

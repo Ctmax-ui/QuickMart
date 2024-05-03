@@ -18,10 +18,12 @@ Route::group(['prefix' => '/'], function () {
 
     Route::get('/products', [ProductController::class, 'index'])->name('main.products');
     Route::get('/product/{id}', [ProductController::class, 'showSingleProductPage'])->name('product.single.page');
-
+    
     Route::get('/checkout', [ProductController::class, 'checkoutPage'])->name('product.checkout.page');
-
+    
     Route::post('/checkout', [OrderController::class, 'store'])->name('product.checkout.store');
+    Route::post('/updateStatus/{id}', [OrderController::class, 'UpdateOrderStatus'])->name('product.UpdateOrderStatus.page');
+    Route::get('/printInvoice/{id}', [OrderController::class, 'printInvoice'])->name('product.printInvoice.page');
         
 
     Route::get('/contact', function(){return view('main.sections.contact_us');})->name('main.contact');
@@ -97,16 +99,9 @@ Route::middleware(['auth','isAdmin'])->group(function () {
 
             Route::get('/Show', [OrderController::class, 'navigaetToOrderShow'])->name('main.admin.userOrderShow');
 
-            // Route::get('/add', [ProductController::class, 'showCatagory'])->name('admin.productsAdd');
-            // Route::get('/show', [ProductController::class, 'showProductLists'])->name('admin.productShow');
+            Route::get('/orderUpdatePage/{id}', [OrderController::class, 'OrderUpdateShowPage'])->name('main.admin.OrderUpdateShowPage');
+            Route::post('/updateOrder', [OrderController::class, 'UpdateOrder'])->name('main.admin.UpdateOrder');
 
-            // Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
-
-            // Route::get('/edit/{id}', [ProductController::class, 'editPage'])->name('admin.products.edit');
-
-            // Route::put('/edit/{id}', [ProductController::class, 'update'])->name('admin.products.update');
-
-            // Route::get('/destroy/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
         });
         
     });
