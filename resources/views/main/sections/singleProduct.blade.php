@@ -6,6 +6,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url()->previous() }}">  Go back</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $product->p_name }}</li>
+                
             </ol>
         </nav>
     </div>
