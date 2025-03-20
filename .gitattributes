@@ -1,9 +1,8 @@
 * text=auto eol=lf
 
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
+*.blade linguist-vendored
+*.css linguist-vendored
+*.js linguist-language=JavaScript
 *.php diff=php
 
 /.github export-ignore
