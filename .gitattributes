@@ -1,6 +1,6 @@
 * text=auto eol=lf
 
-*.blade linguist-vendored export-ignore
+*.blade.php linguist-vendored export-ignore
 *.css linguist-vendored export-ignore
 *.js linguist-language=JavaScript
 *.php diff=php
