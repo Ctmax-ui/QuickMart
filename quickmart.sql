@@ -269,7 +269,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `address`, `phone_number`, `is_admin`, `country`, `city`, `state`, `postal`) VALUES
 (1, 'admin', 'admin@gmail.com', NULL, '$2y$12$nKzk8rbOhrEhWGeLJRFoD.CKD1CiNFe8ZYoeffACrtQ1bGO.XS6ym', 'GyRqu3pRMcmQnhZTAHXZKyPVK9WRgeQBtwWk3Erb7JwrYQ1YkoQerrkNyvjU', '2024-04-25 04:14:23', '2024-05-01 11:06:04', 'kolkata', '+919330152212', 1, 'India', 'Kolkata', 'West Bengal', 700119),
-(2, 'debjeet', 'debjeetbiswas121@gmail.com', NULL, '$2y$12$E7HMydugGoyGdvkKIZHWQ.beqaHz7h89NZ/Djij1XSWE0ZNBdeT0m', NULL, '2024-05-01 09:32:45', '2024-05-01 09:32:45', NULL, NULL, 0, NULL, NULL, NULL, NULL);
+(2, 'user', 'user@gmail.com', NULL, '$2y$12$E7HMydugGoyGdvkKIZHWQ.beqaHz7h89NZ/Djij1XSWE0ZNBdeT0m', NULL, '2024-05-01 09:32:45', '2024-05-01 09:32:45', NULL, NULL, 0, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
